@@ -151,8 +151,46 @@ bar {
 
 # personal rules
 for_window [class="Ec-13.11"] floating enable
+for_window [class="Ec" title="ec"] floating enable
+for_window [class="Ec" title="Auto-Complete"] floating enable
 for_window [class="Estudio"] floating enable
+for_window [class="Osmo"] floating enable
+for_window [class="Osmo"] move position center
+for_window [class="raekidion"] floating enable
 
 # personal key binding
+bindsym $mod+p move scratchpad
+bindsym $mod+Shift+p scratchpad show
 bindsym $mod+i exec x-www-browser
 bindsym $mod+n exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
+bindsym $mod+c exec osmo -c
+bindsym $mod+z exec --no-startup-id xscreensaver-command -lock
+bindsym $mod+Shift+z exec --no-startup-id sudo pm-suspend
+bindsym XF86Eject exec --no-startup-id eject
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5-
+bindsym XF86AudioMute exec --no-startup-id "amixer -D pulse set Master toggle"
+bindsym XF86LaunchA exec --no-startup-id scrot -z -e 'mv $f ~/Images/'
+bindsym $mod+XF86LaunchA exec --no-startup-id scrot -z -u -e 'mv $f ~/Images/'
+bindsym XF86KbdBrightnessUp exec --no-startup-id sudo /usr/local/bin/kbd_backlight up
+bindsym XF86KbdBrightnessDown exec --no-startup-id sudo /usr/local/bin/kbd_backlight down
+bindsym $mod+XF86AudioPlay exec --no-startup-id ~/.i3/mocp_play.sh stop
+bindsym XF86AudioPlay exec --no-startup-id ~/.i3/mocp_play.sh pause
+bindsym XF86AudioPrev exec --no-startup-id mocp --previous
+bindsym XF86AudioNext exec --no-startup-id mocp --next
+bindsym $mod+m exec x-terminal-emulator -e mocp
+bindsym $mod+Shift+v exec x-terminal-emulator -e alsamixer
+bindsym $mod+Shift+Return exec doublecmd
+bindsym --release $mod+numbersign exec --no-startup-id xdotool key 135
+bindsym $mod+XF86KbdBrightnessUp exec --no-startup-id synclient TouchpadOff=0
+bindsym $mod+XF86KbdBrightnessDown exec --no-startup-id synclient TouchpadOff=1 
+bindsym XF86MonBrightnessDown exec --no-startup-id  sudo /usr/local/bin/brightness down
+bindsym XF86MonBrightnessUp exec --no-startup-id sudo /usr/local/bin/brightness up
+bindsym $mod+F1 exec display -immutable -title "help vim" /home/louis/vimcsbepo.png
+bindsym $mod+F2 exec display -immutable -title "help bepo layout" /home/louis/bepo.png
+
+# Autostart
+exec /usr/bin/xscreensaver
+exec /usr/bin/volumeicon
+exec /usr/bin/mocp --server
+exec /usr/local/bin/battery_indicator
