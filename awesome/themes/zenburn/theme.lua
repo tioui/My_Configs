@@ -8,7 +8,7 @@
 
 -- {{{ Main
 theme = {}
-theme.wallpaper_cmd = { "awsetbg /home/louis/.config/awesome/themes/zenburn/zenburn-background.png" }
+theme.wallpaper_cmd = { "feh --bg-scale /home/louis/.config/awesome/themes/zenburn/zenburn-background.png" }
 -- }}}
 
 -- {{{ Styles
@@ -26,7 +26,7 @@ theme.bg_urgent = "#3F3F3F"
 -- {{{ Borders
 theme.border_width  = "2"
 theme.border_normal = "#000000"
-theme.border_focus  = "#6F6F6F"
+theme.border_focus  = "#990000"
 theme.border_marked = "#CC9393"
 -- }}}
 
