@@ -287,15 +287,15 @@ globalkeys = awful.util.table.join(
             end),
         awful.key({ }, "XF86AudioRaiseVolume",
             function ()
-                awful.util.spawn("amixer set Master 5+")
+                awful.util.spawn("amixer -D pulse set Master 5%+")
             end),
         awful.key({ }, "XF86AudioLowerVolume",
             function ()
-                awful.util.spawn("amixer set Master 5-")
+                awful.util.spawn("amixer -D pulse set Master 5%-")
             end),
         awful.key({ }, "XF86AudioMute",
             function ()
-                awful.util.spawn("amixer set Master toggle")
+                awful.util.spawn("amixer -D pulse set Master toggle")
             end),
         awful.key({ }, "XF86KbdBrightnessUp",
             function ()
@@ -548,6 +548,7 @@ os.execute("killall -9 volumeicon;/usr/bin/volumeicon &")
 os.execute("chmod +x /home/louis/lid.sh &")
 os.execute("/usr/bin/mocp --server &")
 os.execute("killall -9 battery_indicator;/usr/local/bin/battery_indicator &")
-os.execute("killall -9 CopyAgent;/usr/local/bin/CopyAgent &")
 os.execute("killall -9 gpa;/usr/bin/gpa -d &")
-os.execute("pcmanfm -d &")
+os.execute("killall -9 gtk-redshift;/usr/bin/gtk-redshift -l 45.572266:-71.999318 &")
+os.execute("killall -9 owncloud;/usr/bin/owncloud &")
+os.execute("if ps aux | grep pcmanfm | grep -v grep; then :;else pcmanfm -d; fi &")

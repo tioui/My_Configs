@@ -14,6 +14,7 @@ inoremap <F5> <C-R>=system('date -u "+%a, %d %b %Y %T %z"')[:-2]<CR>
 :set splitbelow
 :set splitright
 
+let g:clang_exec = "clang-3.5"
 
 " Pymode config
 let g:pymode_rope_completion = 1
