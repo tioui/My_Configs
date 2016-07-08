@@ -1,0 +1,52 @@
+#!/usr/bin/env sh
+BRIGHTNESS=$(cat /sys/class/backlight/gmux_backlight/actual_brightness)
+MAX_BRIGHTNESS=$(cat /sys/class/backlight/gmux_backlight/max_brightness)
+DEVICE=/sys/class/backlight/gmux_backlight/brightness
+INCREMENT=100
+
+SET_VALUE=0
+case $1 in
+
+    up)
+        TOTAL=`expr $BRIGHTNESS + $INCREMENT`
+        if [ "$TOTAL" -gt "$MAX_BRIGHTNESS" ]; then
+           $0 max
+	   SET_VALUE=0
+        else
+	   SET_VALUE=1
+        fi
+        ;;
+    down)
+        TOTAL=`expr $BRIGHTNESS - $INCREMENT`
+        if [ "$TOTAL" -lt "0" ]; then
+           $0 off
+           SET_VALUE=0
+	else
+	   SET_VALUE=1
+        fi
+	;;
+    max)
+        TOTAL=$MAX_BRIGHTNESS
+	if [ "$BRIGHTNESS" -eq "$MAX_BRIGHTNESS" ]
+	then
+	    SET_VALUE=0
+	else
+	    SET_VALUE=1
+	fi
+	;;
+    off)
+        TOTAL=0
+	if [ "$BRIGHTNESS" -eq "0" ]
+	then
+	    SET_VALUE=0
+	else
+	    SET_VALUE=1
+	fi
+	;;
+   *)
+        echo "Use: $0 up|down|max|off"
+        ;; 
+    esac 
+    if [ $SET_VALUE -eq "1" ]; then
+    echo $TOTAL > $DEVICE
+    fi

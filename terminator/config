@@ -1,0 +1,34 @@
+[global_config]
+  title_receive_bg_color = "#a70000"
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, Logger, LaunchpadBugURLHandler
+  title_transmit_bg_color = "#040054"
+  inactive_color_offset = 1.0
+[keybindings]
+  rotate_cw = <Primary><Shift>j
+  group_tab = <Primary>t
+  full_screen = <Primary>F11
+  new_window = <Primary><Shift>n
+  go_prev = <Primary>j
+  rotate_ccw = <Primary><Shift>k
+  new_terminator = <Primary>i
+  ungroup_all = <Primary><Shift>b
+  go_next = <Primary>k
+  ungroup_tab = <Primary><Shift>a
+  group_all = <Primary>g
+[profiles]
+  [[default]]
+    scrollbar_position = hidden
+    background_image = None
+    use_system_font = False
+    scroll_on_output = False
+    font = Monospace 12
+    scrollback_infinite = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]

@@ -8,7 +8,7 @@
 
 -- {{{ Main
 theme = {}
-theme.wallpaper_cmd = { "feh --bg-scale /home/louis/.config/awesome/themes/zenburn/zenburn-background.png" }
+theme.wallpaper = "/home/louis/.config/awesome/themes/zenburn/zenburn-background.png"
 -- }}}
 
 -- {{{ Styles

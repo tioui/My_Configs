@@ -1,0 +1,5 @@
+louis   ALL=(ALL) NOPASSWD:/usr/sbin/pm-suspend
+louis   ALL=(ALL) NOPASSWD:/usr/local/bin/brightness
+louis   ALL=(ALL) NOPASSWD:/usr/local/bin/kbd_backlight
+louis   ALL=(ALL) NOPASSWD:/usr/local/bin/network-disabler
+louis   ALL=(ALL) NOPASSWD:/usr/bin/veracrypt

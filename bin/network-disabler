@@ -1,0 +1,12 @@
+#!/bin/bash
+if [ a"$1" == a"start" ]
+then
+	sudo systemctl start NetworkManager.service
+else
+	if [ a"$1" == a"stop" ]
+	then
+		sudo systemctl stop NetworkManager.service
+	else
+		echo "Usage:" $0 "[start|stop]"
+	fi
+fi
