@@ -1,0 +1,84 @@
+<metric>
+ <basic_metric name="Not a_*" unit="argument">
+  <description></description>
+  <criterion>
+   <and_criterion name="and" unit="argument" negation="False">
+    <normal_criterion name="is_immediate" unit="argument" negation="False">
+    </normal_criterion>
+    <text_criterion name="name_is" unit="argument" negation="True" case_sensitive="True" matching_strategy="wildcard">
+     <text>a_*</text>
+    </text_criterion>
+   </and_criterion>
+  </criterion>
+ </basic_metric>
+ <basic_metric name="Not l_*" unit="local">
+  <description></description>
+  <criterion>
+   <and_criterion name="and" unit="local" negation="False">
+    <text_criterion name="name_is" unit="local" negation="True" case_sensitive="False" matching_strategy="wildcard">
+     <text>l_*</text>
+    </text_criterion>
+    <normal_criterion name="is_immediate" unit="local" negation="False">
+    </normal_criterion>
+    <text_criterion name="name_is" unit="local" negation="False" case_sensitive="False" matching_strategy="wildcard">
+     <text>???*</text>
+    </text_criterion>
+   </and_criterion>
+  </criterion>
+ </basic_metric>
+ <basic_metric name="Indexing Valid" unit="class">
+  <description></description>
+  <criterion>
+   <or_criterion name="or" unit="class" negation="False">
+    <text_criterion name="top_indexing_has_tag" unit="class" negation="True" case_sensitive="False" matching_strategy="identity">
+     <text>description</text>
+    </text_criterion>
+    <text_criterion name="top_indexing_has_tag" unit="class" negation="True" case_sensitive="False" matching_strategy="identity">
+     <text>author</text>
+    </text_criterion>
+    <text_criterion name="top_indexing_has_tag" unit="class" negation="True" case_sensitive="False" matching_strategy="identity">
+     <text>date</text>
+    </text_criterion>
+    <text_criterion name="top_indexing_has_tag" unit="class" negation="True" case_sensitive="False" matching_strategy="identity">
+     <text>revision</text>
+    </text_criterion>
+    <text_criterion name="top_indexing_contain" unit="class" negation="False" case_sensitive="False" matching_strategy="containing">
+     <text>$Date$</text>
+    </text_criterion>
+    <text_criterion name="top_indexing_contain" unit="class" negation="False" case_sensitive="False" matching_strategy="containing">
+     <text>$Revision$</text>
+    </text_criterion>
+    <text_criterion name="text_is" unit="class" negation="False" case_sensitive="False" matching_strategy="regular expression">
+     <text>[\t ]*author[\t ]*:[\t ]\&quot;\&quot;</text>
+    </text_criterion>
+    <text_criterion name="text_is" unit="class" negation="False" case_sensitive="False" matching_strategy="regular expression">
+     <text>[\t ]*description[\t ]*:[\t ]\&quot;Summary description for \{.*\}\.\&quot;</text>
+    </text_criterion>
+   </or_criterion>
+  </criterion>
+ </basic_metric>
+ <basic_metric name="line_45" unit="feature">
+  <description></description>
+  <criterion>
+   <and_criterion name="and" unit="feature" negation="False">
+    <normal_criterion name="is_immediate" unit="feature" negation="False">
+    </normal_criterion>
+    <text_criterion name="text_is" unit="feature" negation="False" case_sensitive="False" matching_strategy="regular expression">
+     <text>^.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*</text>
+    </text_criterion>
+   </and_criterion>
+  </criterion>
+ </basic_metric>
+ <basic_metric name="line_35" unit="feature">
+  <description></description>
+  <criterion>
+   <and_criterion name="and" unit="feature" negation="False">
+    <normal_criterion name="is_immediate" unit="feature" negation="False">
+    </normal_criterion>
+    <text_criterion name="text_is" unit="feature" negation="False" case_sensitive="False" matching_strategy="regular expression">
+     <text>^.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*</text>
+    </text_criterion>
+   </and_criterion>
+  </criterion>
+ </basic_metric>
+</metric>

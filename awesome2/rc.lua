@@ -287,6 +287,10 @@ globalkeys = awful.util.table.join(
             function ()
                 awful.util.spawn("x-www-browser")
             end),
+        awful.key({ modkey, "Shift" }, "i",
+            function ()
+                awful.util.spawn("thunderbird")
+            end),
         awful.key({ modkey, "Shift" }, "z",
             function ()
                 awful.util.spawn("sh -c \"xscreensaver-command -lock;sudo /usr/local/bin/network-disabler stop;sleep 1;sudo pm-suspend;xscreensaver-command -deactivate;sudo /usr/local/bin/network-disabler start\"")
@@ -305,7 +309,7 @@ globalkeys = awful.util.table.join(
             end),
         awful.key({ }, "XF86AudioMute",
             function ()
-                awful.util.spawn("amixer set Master toggle")
+                awful.util.spawn("bash -c \"if amixer get Master | grep --quiet off; then amixer set Master on; amixer set Speaker on; amixer set 'Bass Speaker' on;  amixer set Headphone on; else amixer set Master off; fi\"")
             end),
         awful.key({ }, "XF86KbdBrightnessUp",
             function ()
@@ -330,6 +334,10 @@ globalkeys = awful.util.table.join(
         awful.key({ modkey }, "F1",
             function ()
                 awful.util.spawn("xdg-open /home/louis/awesome.pdf")
+            end),
+        awful.key({ modkey }, "F2",
+            function ()
+                awful.util.spawn("xdg-open /home/louis/bepo.png")
             end),
         awful.key({ modkey }, "XF86AudioPlay",
             function ()
@@ -566,6 +574,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 os.execute("killall -9 xscreensaver;/usr/bin/xscreensaver &")
 --os.execute("killall -9 xss-lock;/usr/bin/xss-lock -- sh -c \"xscreensaver-command -lock;xscreensaver-command -deactivate\" &")
 os.execute("killall -9 nm-applet;/usr/bin/nm-applet --sm-disable &")
+os.execute("killall -9 blueman-applet;/usr/bin/blueman-applet &")
 os.execute("killall -9 volumeicon;/usr/bin/volumeicon &")
 os.execute("/usr/bin/mocp --server &")
 os.execute("killall -9 battery_indicator;/usr/local/bin/battery_indicator &")
@@ -573,4 +582,8 @@ os.execute("killall -9 gpa;/usr/bin/gpa -d &")
 os.execute("pkill -f redshift")
 os.execute("/usr/bin/gtk-redshift -l 45.572266:-71.999318 &")
 os.execute("killall -9 owncloud;/usr/bin/owncloud &")
+os.execute("killall -9 qtox;/usr/bin/qtox &")
+os.execute("killall -9 discord;/usr/bin/discord &")
 os.execute("if ps aux | grep pcmanfm | grep -v grep; then :;else pcmanfm -d; fi &")
+os.execute('setxkbmap -option grp:ctrl_shift_toggle -layout "ca,fr" -variant ",bepo"')
+os.execute('/home/louis/.local/bin/onedrived start')
