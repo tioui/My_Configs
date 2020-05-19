@@ -9,8 +9,8 @@ set hlsearch
 set incsearch
 nnoremap <silent> <leader>c :nohl<CR><C-l>
 set clipboard=unnamed
-nnoremap <F5> "=system('date -u "+%a, %d %b %Y %T %z"')[:-2]<CR>P
-inoremap <F5> <C-R>=system('date -u "+%a, %d %b %Y %T %z"')[:-2]<CR>
+nnoremap <F5> "=system('LANG=en date -u "+%a, %d %b %Y %T %z"')[:-2]<CR>P
+inoremap <F5> <C-R>=system('LANG=en date -u "+%a, %d %b %Y %T %z"')[:-2]<CR>
 :set splitbelow
 :set splitright
 

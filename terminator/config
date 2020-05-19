@@ -26,15 +26,14 @@
 [plugins]
 [profiles]
   [[default]]
-    background_image = None
+    cursor_color = "#aaaaaa"
     font = Monospace 12
-    scroll_on_output = False
     scrollback_infinite = True
     scrollbar_position = hidden
     use_system_font = False
   [[Classe]]
     background_color = "#ffffff"
-    background_image = None
-    font = Monospace 12
+    cursor_color = "#000000"
+    font = Monospace 18
     foreground_color = "#000000"
     use_system_font = False

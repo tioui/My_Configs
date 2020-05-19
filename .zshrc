@@ -25,7 +25,9 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-typeset -gx ISE_EIFFEL=/usr/local/Eiffel_18.07
+typeset -gx LANG=en_US.UTF8
+
+typeset -gx ISE_EIFFEL=/usr/local/Eiffel_19.05
 typeset -gx ISE_PLATFORM=linux-x86-64
 typeset -gx PATH=$PATH:$ISE_EIFFEL/studio/spec/$ISE_PLATFORM/bin
 typeset -gx PATH=$PATH:$ISE_EIFFEL/esbuilder/spec/$ISE_PLATFORM/bin
@@ -38,3 +40,6 @@ typeset -gx MYSQLLIB=/usr/lib/x86_64-linux-gnu
 alias vimeiffel="vim.gtk-py2 -c EOpen"
 
 typeset -gx PATH=$PATH:/home/louis/.local/bin
+
+source $HOME/.cargo/env
+
